@@ -20,11 +20,34 @@ $font-heading: 'Big Shoulders Display';
 //UTILITIES
 
 .u-margin-bottom-lg { margin-bottom: 8rem; }
-.u-margin-bottom-med { margin-bottom: 3rem; }
-.u-margin-bottom-sm { margin-bottom: 1.5rem; }
+.u-margin-bottom-med { margin-bottom: 3.5rem; }
+.u-margin-bottom-sm { margin-bottom: 1.75rem; }
 
 .u-margin-top-lg { margin-top: 8rem; }
 .u-margin-top-xl { margin-top: 10rem; }
+
+//MIXINS
+
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content };  //600px
+    }
+
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) { @content };  //900px
+    }
+
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) { @content };  //1200px
+    }
+
+    @if $breakpoint == desktop-big {
+        @media (min-width: 112.5em) { @content };  //1800px
+    }
+
+}
+
 
 *, *::before, *::after {
     box-sizing: inherit;
@@ -35,13 +58,28 @@ $font-heading: 'Big Shoulders Display';
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+
+    @include respond(tab-land) {
+        font-size: 56.25%; //1rem = 9px 9/15
+    }
+    
+    @include respond(tab-port) {
+        font-size: 50%; //1rem = 8px 8/16
+    }
+    
+    @include respond(desktop-big) {
+        font-size: 75%; //1rem =12px 12/16
+    }
+    
+    
     
 }
 
 body {
     height: 100vh;
+    margin-top: 4rem;
     background-color: $clr-neutral-1;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-family: $font-body;
     line-height: 1.7
     
@@ -56,17 +94,21 @@ body {
     
 
     &__card-1 {
+        width: 30.5rem;
+        
         background-color: $clr-primary-1;
-        border-radius: 1rem 0 0 1rem;
+        border-radius: .7rem 0 0 .7rem;
     }
 
     &__card-2 {
+        width: 30.5rem;
         background-color: $clr-primary-2;
     }
 
     &__card-3 {
+        width: 30.5rem;
         background-color: $clr-primary-3;
-        border-radius: 0 1rem 1rem 0;
+        border-radius: 0 .7rem .7rem 0;
     }
 }
 
@@ -75,34 +117,59 @@ body {
 }
 
 .heading {
+    padding-top: .5rem;
     font-family: $font-heading;
-    font-weight: 700;
-    font-size: 4rem;
+    font-weight: 400;
+    font-size: 3.85rem;
     text-transform: uppercase;
     color: $clr-neutral-2;
+    // line-height: 1.1;
+    line-height: 1;
+    
 }
 
 .text {
     font-weight: 300;
+
+    color: $clr-neutral-1;
+    font-size: 1.5rem;
 }
 
 
 
 
 .card {
-    width: 31rem;
-    padding: 5rem;
-    color: $clr-neutral-2;
+    //width: 31.25rem;
+    padding: 4.7rem 5.3rem 4.7rem 4.7rem;
+
+    @include respond(tab-port) {
+       
+    }
+
+
+  
     
 }
 
 .btn {
-    padding: 1.5rem 3rem;
+    &,
+    &:link, 
+    &:visited {
+    padding: 1.25rem 3rem;
     border: none;
-    border-radius: 4rem;
+    border-radius: 8rem;
     font-family: $font-body;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     background-color: $clr-neutral-2;
+    border: solid 2px $clr-neutral-2;
+
+    &:hover {
+        background-color: transparent;
+        color: $clr-neutral-2;
+        cursor: pointer;
+    }
+    }
+}
 
 .btn-sedans {
     color: $clr-primary-1;
@@ -115,7 +182,7 @@ body {
 .btn-luxury {
     color: $clr-primary-3;
     
-}
+} 
 
 
 
