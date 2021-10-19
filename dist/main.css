@@ -45,33 +45,50 @@ html {
 }
 
 body {
-  height: 100vh;
-  margin-top: 4rem;
   background-color: rgba(255, 255, 255, 0.75);
   font-size: 1.6rem;
   font-family: "Lexend Deca";
   line-height: 1.7;
 }
+@media (max-width: 37.5em) {
+  body {
+    margin: 2rem;
+  }
+}
 
 .container {
-  height: 95%;
+  height: 95vh;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 37.5em) {
+  .container {
+    height: 100%;
+    flex-direction: column;
+  }
+}
 .container__card-1 {
-  width: 30.5rem;
   background-color: #e38826;
   border-radius: 0.7rem 0 0 0.7rem;
 }
+@media (max-width: 37.5em) {
+  .container__card-1 {
+    border-radius: 0.7rem 0.7rem 0 0;
+  }
+}
 .container__card-2 {
-  width: 30.5rem;
   background-color: #006970;
 }
 .container__card-3 {
-  width: 30.5rem;
   background-color: #004241;
   border-radius: 0 0.7rem 0.7rem 0;
+}
+@media (max-width: 37.5em) {
+  .container__card-3 {
+    border-radius: 0 0 0.7rem 0.7rem;
+  }
 }
 
 .icon {
@@ -93,10 +110,23 @@ body {
   color: rgba(255, 255, 255, 0.75);
   font-size: 1.5rem;
 }
+@media (max-width: 37.5em) {
+  .text {
+    margin-bottom: 3.5rem;
+  }
+}
 
 .card {
+  width: 30.5rem;
   padding: 4.7rem 5.3rem 4.7rem 4.7rem;
 }
+@media (max-width: 56.25em) {
+  .card {
+    flex-wrap: wrap;
+    padding: 4.5rem 4rem;
+  }
+}
+
 .btn, .btn:link, .btn:visited {
   padding: 1.25rem 3rem;
   border: none;
@@ -122,4 +152,8 @@ body {
 
 .btn-luxury {
   color: #004241;
+}
+
+.attribution {
+  padding: 2rem;
 }/*# sourceMappingURL=main.css.map */
