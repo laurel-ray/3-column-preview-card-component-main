@@ -21,10 +21,7 @@ $font-heading: 'Big Shoulders Display';
 
 .u-margin-bottom-lg { margin-bottom: 8rem; }
 .u-margin-bottom-med { margin-bottom: 3.5rem; }
-.u-margin-bottom-sm { margin-bottom: 1.75rem; }
 
-.u-margin-top-lg { margin-top: 8rem; }
-.u-margin-top-xl { margin-top: 10rem; }
 
 //MIXINS
 
@@ -69,16 +66,13 @@ html {
     
     @include respond(desktop-big) {
         font-size: 75%; //1rem =12px 12/16
-    }
-    
-    
+    } 
     
 }
 
-body {
+body { 
     
-    
-    background-color: $clr-neutral-1;
+    background-color: $clr-neutral-;
     font-size: 1.6rem;
     font-family: $font-body;
     line-height: 1.7;
@@ -101,10 +95,8 @@ body {
         height: 100%;
         //margin: 2rem;
         flex-direction: column;
-       
-    
-    }
-    
+         
+    }    
 
     &__card-1 {
                 
@@ -116,13 +108,11 @@ body {
         }
     }
 
-    &__card-2 {
-        
+    &__card-2 {        
         background-color: $clr-primary-2;
     }
 
-    &__card-3 {
-        
+    &__card-3 {        
         background-color: $clr-primary-3;
         border-radius: 0 .7rem .7rem 0;
 
@@ -132,9 +122,19 @@ body {
     }
 }
 
+.card {
+    width: 30.5rem;
+    padding: 4.7rem 5.3rem 4.7rem 4.7rem;
+
+    @include respond(tab-port) {
+        flex-wrap: wrap;
+        padding: 4.5rem 4rem;
+        
+     }    
+}
+
 .icon {
     display: block;
-
 }
 
 .heading {
@@ -144,42 +144,18 @@ body {
     font-size: 3.85rem;
     text-transform: uppercase;
     color: $clr-neutral-2;
-    line-height: 1;
-
-    
+    line-height: 1;    
 }
 
 .text {
     font-weight: 300;
-
     color: $clr-neutral-1;
     font-size: 1.5rem;
 
     @include respond(phone) {
         margin-bottom: 3.5rem;
+
     }
-
-
-}
-
-
-
-
-.card {
-    width: 30.5rem;
-    padding: 4.7rem 5.3rem 4.7rem 4.7rem;
-
-    @include respond(tab-port) {
-        flex-wrap: wrap;
-        padding: 4.5rem 4rem;
-        
-     }
-
-    
-
-
-  
-    
 }
 
 .btn {
@@ -194,13 +170,11 @@ body {
     background-color: $clr-neutral-2;
     border: solid 2px $clr-neutral-2;
 
-    &:hover {
-        background-color: transparent;
-        color: $clr-neutral-2;
-        cursor: pointer;
-    }
-
-    
+        &:hover {
+            background-color: transparent;
+            color: $clr-neutral-2;
+            cursor: pointer;
+        }
     }
 }
 
@@ -213,13 +187,11 @@ body {
 }
 
 .btn-luxury {
-    color: $clr-primary-3;
-    
+    color: $clr-primary-3;    
 } 
 
 .attribution {
-    padding: 2rem;
-        
+    padding: 2rem;        
 }
 
 
