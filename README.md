@@ -32,8 +32,8 @@ Users should be able to:
 
 
 
-- Solution URL: [https://github.com/laurel-ray/3-column-preview-card-component-main](https://your-solution-url.com)
-- Live Site URL: [https://laurel-ray.github.io/3-column-preview-card-component-main/](https://your-live-site-url.com)
+- Solution URL: [https://github.com/laurel-ray/3-column-preview-card-component-main](https://github.com/laurel-ray/3-column-preview-card-component-main)
+- Live Site URL: [https://laurel-ray.github.io/3-column-preview-card-component-main/](https://laurel-ray.github.io/3-column-preview-card-component-main)
 
 ## My process
 
